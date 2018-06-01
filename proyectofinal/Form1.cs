@@ -16,5 +16,22 @@ namespace proyectofinal
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (RadioButton.CheckForIllegalCrossThreadCalls == true)
+            {
+                Administrador falumno = new Administrador();
+                falumno.Show();
+            }
+            else
+            {
+                if (RadioButton.CheckForIllegalCrossThreadCalls == true)
+                {
+                    Form1 falunnos = new Form1();
+                    falunnos.Show();
+                }
+            }
+        }
     }
 }

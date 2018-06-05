@@ -19,19 +19,23 @@ namespace proyectofinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (RadioButton.CheckForIllegalCrossThreadCalls == true)
+           
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "ismael" && double.Parse(textBox2.Text) == 1234)
             {
-                Administrador falumno = new Administrador();
-                falumno.Show();
+                this.Hide();
+                Administrador Form2 = new Administrador();
+                Form2.Show();
+
             }
             else
             {
-                if (RadioButton.CheckForIllegalCrossThreadCalls == true)
-                {
-                    Form1 falunnos = new Form1();
-                    falunnos.Show();
-                }
+                MessageBox.Show("Nombre o Contraseña Invalido ");
             }
+
         }
     }
 }

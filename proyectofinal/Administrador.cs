@@ -58,11 +58,34 @@ namespace proyectofinal
             textBox3.Enabled = false;
             textBox4.Enabled = false;
             textBox5.Enabled = false;
-            textBox6.Enabled = false;
-            textBox7.Enabled = false;
-            textBox8.Enabled = false;
             button1.Enabled = false;
             button2.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            agreproduc personatemp = new agreproduc();
+            personatemp.Nombre = textBox5.Text;
+            
+            
+            lagregarproduc.Add(personatemp);
+           
+          
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = lagregarproduc;
+            dataGridView1.Refresh();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox5.Enabled = true;
+            button2.Enabled = true;
+                  }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

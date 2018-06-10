@@ -13,7 +13,9 @@ namespace proyectofinal
 {
     public partial class Administrador : Form
     {
-        List<agreproduc> lagregarproduc = new List<agreproduc>();
+       static List<agreproduc> lagregarproduc = new List<agreproduc>();
+
+        static int posicionmodificar;
         public Administrador()
         {
             InitializeComponent();
@@ -25,11 +27,11 @@ namespace proyectofinal
 
             //temporal
             agreproduc personatemp = new agreproduc();
-            personatemp.Nombre = textBox1.Text;
-            personatemp.Precio = textBox2.Text;
+            personatemp.Nombre1 = textBox2.Text;
+            personatemp.Apellido1 = textBox3.Text;
 
-            personatemp.Cantidad = textBox3.Text;
-            personatemp.Categoria = textBox4.Text;
+            personatemp.Nit1 = textBox3.Text;
+            personatemp.Direccion1 = textBox5.Text;
 
             // el objeto temporal guardarlo en la lista 
             lagregarproduc.Add(personatemp);
@@ -64,17 +66,6 @@ namespace proyectofinal
 
         private void button2_Click(object sender, EventArgs e)
         {
-            agreproduc personatemp = new agreproduc();
-            personatemp.Nombre = textBox5.Text;
-            
-            
-            lagregarproduc.Add(personatemp);
-           
-          
-            dataGridView1.DataSource = null;
-            dataGridView1.Refresh();
-            dataGridView1.DataSource = lagregarproduc;
-            dataGridView1.Refresh();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -85,6 +76,48 @@ namespace proyectofinal
 
         private void label8_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string fileName = @"C:\Users\Margarito Hernandez\Documents\Visual Studio 2017.txt";
+
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            //Se cargan los datos del archivo a la lista de clientes
+            while (reader.Peek() > -1)
+            {
+                //Leer los datos y guardarlos en un temporal
+                agreproduc clientetemp = new agreproduc();
+                clientetemp.Nombre1 = reader.ReadLine();
+                clientetemp.Apellido1 = reader.ReadLine();
+                clientetemp.Nit1 = reader.ReadLine();
+                clientetemp.Direccion1 = reader.ReadLine();
+
+                //Agregar a la lista el temporal
+                lagregarproduc.Add(clientetemp);
+            }
+            reader.Close();
+
+            //Se recorre la lista de clientes
+            for (int i = 0; i < lagregarproduc.Count; i++)
+            {
+                //Si se el dato a buscar es igual al dato de la lista mostrarlo en los textbox
+                if (lagregarproduc[i].Nombre1 == textBox1.Text)
+                {
+                    textBox2.Text = lagregarproduc[i].Nombre1;
+                    textBox3.Text = lagregarproduc[i].Apellido1;
+                    textBox4.Text = lagregarproduc[i].Nit1;
+                    textBox5.Text = lagregarproduc[i].Direccion1;
+                    //Guardar en que posicion se encontró el dato para utilizarla mas adelante al momento de modificar
+                    posicionmodificar = i;
+
+                }
+
+            }
+
 
         }
     }

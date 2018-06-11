@@ -15,6 +15,7 @@ namespace proyectofinal
     {
         List<trastienda> ltrastienda = new List<trastienda>();
         List<meses> lmeses = new List<meses>();
+        List<vendedor> lvendedor = new List<vendedor>();
         static int posicionmodificar;
         public reporte()
         {
@@ -83,13 +84,13 @@ namespace proyectofinal
                 productotemp.Mes = reader.ReadLine();
                 productotemp.Nombre = reader.ReadLine();
                 productotemp.Total = reader.ReadLine();
-                productotemp.M2 = reader.ReadLine();
+                
                 productotemp.N2 = reader.ReadLine();
                 productotemp.T2 = reader.ReadLine();
-                productotemp.M3 = reader.ReadLine();
+               
                 productotemp.N3 = reader.ReadLine();
                 productotemp.T3 = reader.ReadLine();
-                productotemp.M4 = reader.ReadLine();
+               
                 productotemp.N4 = reader.ReadLine();
                 productotemp.T4 = reader.ReadLine();
 
@@ -195,6 +196,51 @@ namespace proyectofinal
 
             }
             MessageBox.Show("los productos de electronica se estan agotando");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\listados\ventas.txt";
+
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            //Se cargan los datos del archivo a la lista de clientes
+            while (reader.Peek() > -1)
+            {
+                //Leer los datos y guardarlos en un temporal
+                vendedor productotemp = new vendedor();
+                productotemp.Nombre = reader.ReadLine();
+                productotemp.Categoria = reader.ReadLine();
+                productotemp.Cantidad = reader.ReadLine();
+                productotemp.Horas = reader.ReadLine();
+
+
+                //Agregar a la lista el temporal
+                lvendedor.Add(productotemp);
+            }
+            reader.Close();
+            //temporal
+            vendedor personatemp = new vendedor();
+            
+            //mostrar la lista del datagridview
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = lvendedor;
+            dataGridView1.Refresh();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ismael realizo 1000 dventas");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 Form2 = new Form1();
+            Form2.Show();
         }
     }
 }

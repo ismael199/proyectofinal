@@ -78,6 +78,7 @@
     </Compile>
     <Compile Include="total.cs" />
     <Compile Include="trastienda.cs" />
+    <Compile Include="vendedor.cs" />
     <EmbeddedResource Include="..\..\..\..\Documents\proyecto final de progra.resx">
       <DependentUpon>proyecto final de progra.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +122,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\oooo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlfX-Xf0.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cajero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reporte1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

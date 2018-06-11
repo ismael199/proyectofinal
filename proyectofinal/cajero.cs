@@ -127,5 +127,12 @@ namespace proyectofinal
         {
             textBox17.Text = (Convert.ToInt32(textBox13.Text)-Convert.ToInt32(textBox16.Text)).ToString();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 Form2 = new Form1();
+            Form2.Show();
+        }
     }
 }

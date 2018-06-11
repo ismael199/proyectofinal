@@ -40,7 +40,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(40, 177);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(144, 24);
             this.checkBox1.TabIndex = 1;
@@ -52,17 +52,18 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(258, 177);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(5);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(119, 24);
+            this.checkBox2.Size = new System.Drawing.Size(99, 24);
             this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Trabajador ";
+            this.checkBox2.Text = "CAJERO";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(126, 54);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 26);
             this.textBox1.TabIndex = 3;
@@ -80,7 +81,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(126, 120);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 26);
             this.textBox2.TabIndex = 7;
@@ -110,7 +111,7 @@
             this.Controls.Add(this.checkBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Maroon;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.TransparencyKey = System.Drawing.Color.DarkRed;

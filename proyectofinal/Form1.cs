@@ -33,5 +33,20 @@ namespace proyectofinal
             }
 
         }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "ismael" && double.Parse(textBox2.Text) == 1234)
+            {
+                this.Hide();
+                cajero Form2 = new cajero();
+                Form2.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Nombre o Contraseña Invalido ");
+            }
+        }
     }
 }

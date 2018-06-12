@@ -70,6 +70,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -424,12 +430,70 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(492, 317);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 45;
+            this.button7.Text = "REGISTRO DE DATOS";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(438, 301);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(208, 13);
+            this.label19.TabIndex = 46;
+            this.label19.Text = "Registro de Todos los detalles  de la venta";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(552, 182);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(106, 13);
+            this.label21.TabIndex = 47;
+            this.label21.Text = "comprobar inventario";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(558, 203);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(100, 20);
+            this.textBox15.TabIndex = 48;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(555, 229);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(100, 20);
+            this.textBox18.TabIndex = 49;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(477, 203);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 50;
+            this.button8.Text = "ver";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // cajero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::proyectofinal.Properties.Resources.cajero;
             this.ClientSize = new System.Drawing.Size(800, 530);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label20);
@@ -524,5 +588,11 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Button button8;
     }
 }

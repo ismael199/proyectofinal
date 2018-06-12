@@ -60,6 +60,7 @@
       <DependentUpon>cajero.cs</DependentUpon>
     </Compile>
     <Compile Include="cliente.cs" />
+    <Compile Include="comprobar.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,7 @@
     <Compile Include="reporte.Designer.cs">
       <DependentUpon>reporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="tegistotal.cs" />
     <Compile Include="total.cs" />
     <Compile Include="trastienda.cs" />
     <Compile Include="vendedor.cs" />

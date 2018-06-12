@@ -17,6 +17,8 @@ namespace proyectofinal
         static List<cliente> clientela = new List<cliente>();
         List<total> totaltemp = new List<total>();
              List<int>preciotemp = new List<int>();
+        List<tegistotal> ltegistotal = new List<tegistotal>();
+        List<comprobar> lcomprobar = new List<comprobar>();
         static int posicionmodificar;
         public cajero()
         {
@@ -140,6 +142,79 @@ namespace proyectofinal
             this.Hide();
             Form1 Form2 = new Form1();
             Form2.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\listados\registros.txt";
+
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            //Se cargan los datos del archivo a la lista de clientes
+            while (reader.Peek() > -1)
+            {
+                //Leer los datos y guardarlos en un temporal
+                tegistotal productotemp = new tegistotal();
+                productotemp.Producto = reader.ReadLine();
+                productotemp.Cantvendida= reader.ReadLine();
+                productotemp.Cliente = reader.ReadLine();
+                productotemp.Cajero = reader.ReadLine();
+                productotemp.Fecha = reader.ReadLine();
+                productotemp.Hora = reader.ReadLine();
+
+
+                //Agregar a la lista el temporal
+                ltegistotal.Add(productotemp);
+            }
+            reader.Close();
+            //temporal
+            tegistotal personatemp = new tegistotal();
+
+            //mostrar la lista del datagridview
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = ltegistotal;
+            dataGridView1.Refresh();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //el nombre del archivo donde tiene que buscar
+            string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\listados\comprobar.txt";
+
+            FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            //Se cargan los datos del archivo a la lista de clientes
+            while (reader.Peek() > -1)
+            {
+                //Leer los datos y guardarlos en un temporal
+                comprobar productotemp = new comprobar();
+                productotemp.Nombre= reader.ReadLine();
+                productotemp.Por = reader.ReadLine();
+
+                //Agregar a la lista el temporal
+                lcomprobar.Add(productotemp);
+            }
+            reader.Close();
+
+            //Se recorre la lista de clientes
+            for (int i = 0; i < lcomprobar.Count; i++)
+            {
+                //Si se el dato a buscar es igual al dato de la lista mostrarlo en los textbox
+                if (lcomprobar[i].Nombre == textBox15.Text)
+                {
+                    textBox18.Text = lcomprobar[i].Por;
+                   
+
+                    //Guardar en que posicion se encontró el dato para utilizarla mas adelante al momento de modificar
+                    posicionmodificar = i;
+
+                }
+
+            }
         }
     }
 }

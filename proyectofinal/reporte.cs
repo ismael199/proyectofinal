@@ -24,12 +24,13 @@ namespace proyectofinal
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //nombre el archivo
             string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\listados\vendidas.txt";
 
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
 
-            //Se cargan los datos del archivo a la lista de clientes
+            //Se cargan los datos del archivo a la lista de reporte
             while (reader.Peek() > -1)
             {
                 //Leer los datos y guardarlos en un temporal
@@ -42,7 +43,7 @@ namespace proyectofinal
             }
             reader.Close();
 
-            //Se recorre la lista de clientes
+            //Se recorre la lista de reporte
             for (int i = 0; i < ltrastienda.Count; i++)
             {
                 //Si se el dato a buscar es igual al dato de la lista mostrarlo en los textbox
@@ -64,13 +65,15 @@ namespace proyectofinal
             agreproduc personatemp = new agreproduc();
             personatemp.Nombre1 = textBox2.Text;
 
-            //mostrar la lista del datagridview
+            //mostrar el mensaje de quien es el que vendio mas 
 
             MessageBox.Show("la benta mas vendiada es de : electronica ");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //buscar los meses 
+            //nombre del archivo
             string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\listados\meses.txt";
 
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
@@ -80,6 +83,7 @@ namespace proyectofinal
             while (reader.Peek() > -1)
             {
                 //Leer los datos y guardarlos en un temporal
+                //osea la lista en meses
                 meses productotemp = new meses();
                 productotemp.Mes = reader.ReadLine();
                 productotemp.Nombre = reader.ReadLine();
@@ -163,8 +167,9 @@ namespace proyectofinal
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //nombre del archivo
             string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\listados\vendidas.txt";
-
+            //Para que sobreescriba los datos existentes se usa CREATE
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream);
 

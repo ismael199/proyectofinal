@@ -25,11 +25,14 @@ namespace proyectofinal
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //llamar el nombre del archivo 
+
             string fileName = @"C:\Users\Margarito Hernandez\source\repos\proyectofinal\proyectofinal\bin\Debug\cajero.txt";
 
             FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
             StreamReader reader = new StreamReader(stream); 
-            //Se cargan los datos del archivo a la lista de clientes
+
+            //Se cargan los datos del archivo a la lista de cajero
             while (reader.Peek() > -1)
             {
                 //Leer los datos y guardarlos en un temporal
@@ -46,15 +49,16 @@ namespace proyectofinal
             reader.Close();
 
 
-            //Se recorre la lista de clientes
+            //Se recorre la lista de cajero
             for (int i = 0; i < clientela.Count; i++)
             {
-                //Si se el dato a buscar es igual al dato de la lista mostrarlo en los textbox
-                if (clientela[i].Nit == textBox1.Text)
+                //Si es el dato a buscar es igual al dato de la lista mostrarlo en los textbox
+                if (clientela[i].Nit == textBox1.Text)//busca los datos
                 {
                     textBox2.Text = clientela[i].Nombre;
                     textBox3.Text = clientela[i].Apellido;
                     textBox4.Text = clientela[i].Direccion;
+
                     //Guardar en que posicion se encontró el dato para utilizarla mas adelante al momento de modificar
                     posicionmodificar = i;
                 }
@@ -101,6 +105,7 @@ namespace proyectofinal
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //codigo de multiplicacion de canidad y precio
             textBox14.Text = (Convert.ToInt32(textBox11.Text) * Convert.ToInt32(textBox12.Text)).ToString();
             textBox13.Text = (Convert.ToInt32(textBox11.Text) * Convert.ToInt32(textBox12.Text)).ToString();
             textBox13.Text = (Convert.ToInt32(textBox11.Text) * Convert.ToInt32(textBox12.Text)).ToString();
@@ -115,21 +120,23 @@ namespace proyectofinal
 
             // el objeto temporal guardarlo en la lista 
             lcaja.Add(cajatemp);
+
             //mostrar la lista del datagridview
 
             dataGridView1.DataSource = null;
-            dataGridView1.Refresh();
+            dataGridView1.Refresh(); //es para refrescar el datagridviw
             dataGridView1.DataSource = lcaja;
             dataGridView1.Refresh();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //el el resultado del vuelto del cliente
             textBox17.Text = (Convert.ToInt32(textBox13.Text)-Convert.ToInt32(textBox16.Text)).ToString();
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
+        {//regrear al menu prinsipal
             this.Hide();
             Form1 Form2 = new Form1();
             Form2.Show();

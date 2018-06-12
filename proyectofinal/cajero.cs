@@ -17,7 +17,7 @@ namespace proyectofinal
         static List<cliente> clientela = new List<cliente>();
         List<total> totaltemp = new List<total>();
              List<int>preciotemp = new List<int>();
-        List<tegistotal> ltegistotal = new List<tegistotal>();
+        static List<jodio> ljodido = new List<jodio> ();
         List<comprobar> lcomprobar = new List<comprobar>();
         static int posicionmodificar;
         public cajero()
@@ -155,7 +155,7 @@ namespace proyectofinal
             while (reader.Peek() > -1)
             {
                 //Leer los datos y guardarlos en un temporal
-                tegistotal productotemp = new tegistotal();
+                jodio productotemp = new jodio();
                 productotemp.Producto = reader.ReadLine();
                 productotemp.Cantvendida= reader.ReadLine();
                 productotemp.Cliente = reader.ReadLine();
@@ -165,17 +165,17 @@ namespace proyectofinal
 
 
                 //Agregar a la lista el temporal
-                ltegistotal.Add(productotemp);
+                ljodido.Add(productotemp);
             }
             reader.Close();
             //temporal
-            tegistotal personatemp = new tegistotal();
+            jodio personatemp = new jodio();
 
             //mostrar la lista del datagridview
 
             dataGridView1.DataSource = null;
             dataGridView1.Refresh();
-            dataGridView1.DataSource = ltegistotal;
+            dataGridView1.DataSource = ljodido;
             dataGridView1.Refresh();
         }
 
@@ -215,6 +215,11 @@ namespace proyectofinal
                 }
 
             }
+        }
+
+        private void cajero_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proyectofinal
 {
-    class tegistotal
+    class jodio
     {
         string producto;
         string cantvendida;
@@ -17,7 +17,7 @@ namespace proyectofinal
 
         public string Producto { get => producto; set => producto = value; }
         public string Cantvendida { get => cantvendida; set => cantvendida = value; }
-        public string Cliente { get => cliente ; set => cliente = value; }
+        public string Cliente { get => cliente; set => cliente = value; }
         public string Cajero { get => cajero; set => cajero = value; }
         public string Fecha { get => fecha; set => fecha = value; }
         public string Hora { get => hora; set => hora = value; }

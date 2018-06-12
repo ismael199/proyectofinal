@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\Documents\proyecto final de progra.cs">
+    <Compile Include="..\..\..\..\Documents\finalizoelproyecto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\Documents\proyecto final de progra.Designer.cs">
-      <DependentUpon>proyecto final de progra.cs</DependentUpon>
+    <Compile Include="..\..\..\..\Documents\finalizoelproyecto.Designer.cs">
+      <DependentUpon>finalizoelproyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="agreproduc.cs" />
     <Compile Include="caja.cs" />
@@ -68,6 +68,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ingresar.cs" />
+    <Compile Include="jodio.cs" />
     <Compile Include="meses.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,12 +78,11 @@
     <Compile Include="reporte.Designer.cs">
       <DependentUpon>reporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="tegistotal.cs" />
     <Compile Include="total.cs" />
     <Compile Include="trastienda.cs" />
     <Compile Include="vendedor.cs" />
-    <EmbeddedResource Include="..\..\..\..\Documents\proyecto final de progra.resx">
-      <DependentUpon>proyecto final de progra.cs</DependentUpon>
+    <EmbeddedResource Include="..\..\..\..\Documents\finalizoelproyecto.resx">
+      <DependentUpon>finalizoelproyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cajero.resx">
       <DependentUpon>cajero.cs</DependentUpon>

@@ -538,6 +538,7 @@
             this.Controls.Add(this.button1);
             this.Name = "cajero";
             this.Text = "cajero";
+            this.Load += new System.EventHandler(this.cajero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
